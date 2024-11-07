@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/LeaderAIPC/static/css/main.69f99fb1.css",
+    "main.css": "/LeaderAIPC/static/css/main.9e562c64.css",
     "main.js": "/LeaderAIPC/static/js/main.b4a82756.js",
     "static/js/453.2289a9b0.chunk.js": "/LeaderAIPC/static/js/453.2289a9b0.chunk.js",
     "index.html": "/LeaderAIPC/index.html",
-    "main.69f99fb1.css.map": "/LeaderAIPC/static/css/main.69f99fb1.css.map",
+    "main.9e562c64.css.map": "/LeaderAIPC/static/css/main.9e562c64.css.map",
     "main.b4a82756.js.map": "/LeaderAIPC/static/js/main.b4a82756.js.map",
     "453.2289a9b0.chunk.js.map": "/LeaderAIPC/static/js/453.2289a9b0.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.69f99fb1.css",
+    "static/css/main.9e562c64.css",
     "static/js/main.b4a82756.js"
   ]
 }
