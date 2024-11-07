@@ -1,0 +1,270 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Base */
+.featuresCarousel {
+  font-family: 'Figtree', sans-serif;
+  color: white;
+  overflow: hidden;
+  padding-top: 48px;
+}
+
+.container {
+  max-width: 1296px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+}
+
+/* Navigation Tabs */
+.navTabs {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-bottom: 48px;
+}
+
+.navButton {
+  background: none;
+  border: none;
+  color: #838383;
+  cursor: pointer;
+  font-family: 'Figtree', sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  padding: 12px 24px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.navButton:hover {
+  color: white;
+}
+
+.navButton.active {
+  color: white;
+  font-weight: 600;
+}
+
+.navButton.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px;
+  padding: .125rem;
+  background: linear-gradient(90deg, #c49af2, #546ffe, #7ce7f5);
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+}
+
+.navButton.active::after {
+  display: none;
+}
+
+/* Carousel */
+.carouselContainer {
+  position: relative;
+  margin: 0 -20px;
+}
+
+.featureSwiper {
+  overflow: visible;
+  padding: 0 20px;
+}
+
+/* Keep global swiper styles */
+:global(.swiper) {
+  overflow: visible;
+}
+
+:global(.swiper-slide) {
+  opacity: 0.4;
+  transition: all 0.3s ease;
+  width: auto;
+}
+
+:global(.swiper-slide-active) {
+  opacity: 1;
+}
+
+/* Slide Content */
+.slideContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slideImageContainer {
+  width: 855px;
+  height: 509px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.slideImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Scale down non-active slides */
+:global(.swiper-slide:not(.swiper-slide-active)) .slideImageContainer {
+  transform: scale(0.9);
+}
+
+/* Text Content */
+.slideText {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.slideText.active {
+  animation: fadeUpIn 0.5s ease forwards;
+}
+
+.slideTitle {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+.slideDescription {
+  color: #838383;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Navigation Arrows */
+.navArrow {
+  position: absolute;
+  top: 40%;
+  transform: translateY(-50%);
+  z-index: 10;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.navArrow:hover {
+  transform: translateY(-50%) scale(1.1);
+}
+
+.navArrowPrev {
+  composes: navArrow;
+  left: 5rem;
+}
+
+.navArrowNext {
+  composes: navArrow;
+  right: 5rem;
+}
+
+.navArrowIcon {
+  stroke: url(#arrow-gradient);
+}
+
+.gradientDefs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Hide default Swiper navigation */
+:global(.swiper-button-prev),
+:global(.swiper-button-next) {
+  display: none;
+}
+
+/* Animation */
+@keyframes fadeUpIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1400px) {
+  .slideImageContainer {
+    width: 700px;
+    height: 417px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .slideImageContainer {
+    width: 600px;
+    height: 357px;
+  }
+  
+  .navTabs {
+    gap: 16px;
+  }
+  
+  .navButton {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .slideTitle {
+    font-size: 24px;
+  }
+
+  .slideDescription {
+    font-size: 16px;
+  }
+
+  .navArrow {
+    width: 48px;
+    height: 48px;
+  }
+
+  .navArrow svg {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .slideImageContainer {
+    width: 100%;
+    height: auto;
+    max-width: 500px;
+  }
+
+  .navArrowPrev {
+    left: 1.5rem;
+  }
+  
+  .navArrowNext {
+    right: 1.5rem;
+  }
+}

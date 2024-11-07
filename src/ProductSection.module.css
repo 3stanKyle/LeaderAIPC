@@ -1,0 +1,230 @@
+* {
+  font-family: 'Figtree', sans-serif;
+  box-sizing: border-box;
+}
+
+.container {
+max-width: 1296px;
+margin: 0 auto;
+padding: 40px 16px;
+overflow-x: hidden;
+}
+
+.header {
+text-align: center;
+margin-bottom: 40px;
+padding: 0 16px;
+}
+
+.title {
+font-size: clamp(2rem, 5vw, 4rem);
+font-weight: 500;
+background: linear-gradient(90deg, #C084FC, #60A5FA, #7CE7F5);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+margin-bottom: 1.5rem;
+}
+
+.subtitle {
+color: #fff;
+font-size: clamp(1.125rem, 3vw, 1.5rem);
+margin-bottom: 12px;
+}
+
+.disclaimer {
+color: #838383;
+font-size: .813rem;
+line-height: 1.5;
+max-width: 768px;
+margin: 0 auto;
+padding: 0 16px;
+}
+
+.disclaimer a {
+color: #7ce7f5;
+text-decoration: none;
+transition: opacity 0.2s ease;
+}
+
+.disclaimer a:hover {
+opacity: 0.8;
+}
+
+.grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+gap: 24px;
+padding: 0 16px;
+}
+
+@media (min-width: 1024px) {
+.grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+}
+
+.card {
+border-radius: 12px;
+padding: 24px;
+position: relative;
+transition: all 0.3s ease;
+background: rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+border-radius: 12px;
+padding: 1px;
+background: linear-gradient(180deg, #c49af2, #546ffe, #7ce7f5);
+-webkit-mask: 
+  linear-gradient(#fff 0 0) content-box, 
+  linear-gradient(#fff 0 0);
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+opacity: 1;
+}
+
+.card > * {
+position: relative;
+z-index: 1;
+}
+
+.imageContainer {
+margin-bottom: 20px;
+overflow: hidden;
+}
+
+.image {
+width: 100%;
+height: auto;
+display: block;
+}
+
+.cardTitle {
+color: #fff;
+font-size: 1.25rem;
+font-weight: 600;
+margin-bottom: 16px;
+text-align: left;
+}
+
+.specsList {
+list-style: none;
+padding: 0;
+margin: 0 0 1.5rem 0;
+}
+
+.specItem {
+color: rgba(255, 255, 255, 0.8);
+font-size: .813rem;
+line-height: 1.5;
+display: flex;
+align-items: flex-start;
+margin-bottom: 8px;
+text-align: left;
+}
+
+.bullet {
+margin-right: 8px;
+color: #7CE7F5;
+flex-shrink: 0;
+}
+
+.button {
+width: 100%;
+padding: 12px;
+background: linear-gradient(90deg, #7ce7f5, #247df9);
+color: white;
+border: none;
+border-radius: 8px;
+font-size: 1.25rem;
+font-weight: 500;
+cursor: pointer;
+transition: background 0.2s ease;
+text-decoration: none;
+display: inline-block;
+text-align: center;
+}
+
+.button:hover {
+background: linear-gradient(90deg, #247df9, #C084FC);
+}
+
+/* Mobile carousel styles */
+.carousel {
+display: none;
+position: relative;
+padding: 0 20px;
+overflow: hidden;
+}
+
+.carouselTrack {
+display: flex;
+transition: transform 0.3s ease;
+}
+
+.carouselSlide {
+flex: 0 0 100%;
+padding: 0 12px;
+}
+
+.navButton {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background: rgba(0, 0, 0, 0.6);
+border: none;
+border-radius: 50%;
+width: 40px;
+height: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+cursor: pointer;
+color: #fff;
+z-index: 2;
+}
+
+.prevButton {
+left: 0;
+}
+
+.nextButton {
+right: 0;
+}
+
+.dots {
+display: flex;
+justify-content: center;
+gap: 8px;
+margin-top: 24px;
+}
+
+.dot {
+width: 8px;
+height: 8px;
+border-radius: 50%;
+background: #4B5563;
+border: none;
+padding: 0;
+cursor: pointer;
+}
+
+.dot.active {
+background: #7CE7F5;
+}
+
+@media (max-width: 768px) {
+.grid {
+  display: none;
+}
+
+.carousel {
+  display: block;
+}
+}

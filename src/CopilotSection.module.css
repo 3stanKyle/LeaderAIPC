@@ -1,0 +1,63 @@
+.section {
+    position: relative;
+    padding: 40px 0;
+  }
+  
+  .container {
+    max-width: 1296px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .title {
+    font-size: 3rem;
+    font-weight: 500;
+    text-align: center;
+    margin-bottom: 1rem;
+    background: linear-gradient(90deg, #C084FC, #60A5FA, #7CE7F5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .subtitle {
+    text-align: center;
+    color: #fff;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    max-width: 1026px;
+    margin: 0 auto 1rem;
+  }
+  
+  .disclaimer {
+    text-align: center;
+    color: #838383;
+    font-size: 0.813rem;
+    margin-bottom: 3.5rem;
+  }
+  
+  .imageCard {
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+  
+  .image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  @media (max-width: 768px) {
+    .title {
+      font-size: 2.5rem;
+    }
+  
+    .subtitle {
+      font-size: 1rem;
+    }
+  
+    .imageCard {
+      border-radius: 1.5rem;
+    }
+  }

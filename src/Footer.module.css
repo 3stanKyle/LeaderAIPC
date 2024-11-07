@@ -1,0 +1,53 @@
+/* Footer.module.css */
+.footer {
+  padding: 32px 16px;
+}
+
+.container {
+  max-width: 1296px;
+  margin: 0 auto;
+}
+
+.list {
+  list-style: none;
+  padding: 0 2rem;
+  margin: 0;
+  text-align: left;
+}
+
+.item {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.813rem;
+  color: #838383;
+  line-height: 1.5;
+}
+
+.number {
+  min-width: 12px;
+  font-weight: 500;
+}
+
+.text {
+  margin: 0;
+}
+
+.text a {
+  color: #7ce7f5;
+  text-decoration: none;
+}
+
+.text a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 24px 12px;
+  }
+  
+  .item {
+    font-size: 13px;
+  }
+}
