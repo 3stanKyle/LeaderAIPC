@@ -103,7 +103,7 @@ const ProductSection = () => {
   };
 
   return (
-    <section className={styles.container}>
+    <section id="shop-section" className={styles.container}>
       <header className={styles.header}>
         <h2 className={styles.title}>Find your LEADER Copilot+ AI PC</h2>
         <p className={styles.subtitle}>

@@ -85,7 +85,7 @@ const Background = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('https://content.leadermarketing.com.au/assets/uploads/Leader-AI-PC_KV_Background.jpg');
+  background-image: url('https://content.leadermarketing.com.au/assets/uploads/AI-PC-2_KV_background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -108,16 +108,56 @@ const KVImage = styled.img`
   animation-delay: 3s;
   z-index: 2;
   object-fit: contain;
+  pointer-events: none;
+`;
+
+const ButtonWrapper = styled.div`
+  position: absolute;
+  left: 50%;
+  top: 70%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  pointer-events: all;
+`;
+
+const ShopNowButton = styled.button`
+  padding: 1rem 3rem;
+  font-family: 'Figtree', sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: white;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 3rem;
+  cursor: pointer;
+  backdrop-filter: blur(8px);
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: ${fadeIn} 1s ease-in-out forwards;
+  animation-delay: 3.5s;
+  pointer-events: auto;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.75rem 2rem;
+    font-size: 1rem;
+  }
 `;
 
 const ContentWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4rem;
-  z-index: 2;
-  margin-top: 10rem;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 `;
 
 const Logo = styled.img`
@@ -127,10 +167,32 @@ const Logo = styled.img`
   animation-delay: 3.5s;
   z-index: 2;
   width: auto;
+  max-width: 100%;
   height: auto;
+  margin-top: 2rem;
+  pointer-events: none;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 90%;
+  }
 `;
 
 const HeroAnimation = () => {
+  const scrollToShop = () => {
+    console.log('Button clicked!'); // Debug log
+    const shopSection = document.getElementById('shop-section');
+    if (shopSection) {
+      shopSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   return (
     <>
       <GlobalStyle />
@@ -144,14 +206,19 @@ const HeroAnimation = () => {
         <Background />
         <ContentWrapper>
           <KVImage 
-            src="https://content.leadermarketing.com.au/assets/uploads/Leader-AI-PC_KV.png"
+            src="https://content.leadermarketing.com.au/assets/uploads/Leader_AI-Laptops_KV.png"
             alt="Leader AI PC"
           />
           <Logo
-            src="https://content.leadermarketing.com.au/assets/uploads/leader-copilot-AI-PC_logo.png"
+            src="https://content.leadermarketing.com.au/assets/uploads/leader-intel-copilot-ai-pc-logos.png"
             alt="Leader Copilot AI PC Logo"
           />
         </ContentWrapper>
+        <ButtonWrapper>
+          <ShopNowButton onClick={scrollToShop}>
+            SHOP NOW
+          </ShopNowButton>
+        </ButtonWrapper>
       </HeroSection>
     </>
   );
