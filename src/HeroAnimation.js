@@ -96,6 +96,10 @@ const Background = styled.div`
 
   @media (max-width: 768px) {
     background-size: contain;
+    top: -20%;
+    left: -25%;
+    width: 150%;
+    height: 100%;
   }
 `;
 
@@ -118,6 +122,10 @@ const ButtonWrapper = styled.div`
   transform: translate(-50%, -50%);
   z-index: 10;
   pointer-events: all;
+
+  @media (max-width: 768px) {
+    top: 64%;
+  }
 `;
 
 const ShopNowButton = styled.button`
